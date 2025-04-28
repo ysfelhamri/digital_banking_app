@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CurrentAccount extends BankAccount{
-    private double overDraft;
-
+public class SavingAccount extends BankAccount {
+    private double interestRate;
 }
