@@ -27,5 +27,4 @@ public interface BankAccountService {
     CustomerDTO updateCustomer(CustomerDTO customerDTO);
 
     void deleteCustomer(Long customerId);
-    List<CustomerDTO> searchCustomers(String keyword);
 }
