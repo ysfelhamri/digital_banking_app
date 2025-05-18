@@ -1,9 +1,6 @@
 package q.jv.digital_banking_app.services;
 
-import q.jv.digital_banking_app.dtos.BankAccountDTO;
-import q.jv.digital_banking_app.dtos.CurrentBankAccountDTO;
-import q.jv.digital_banking_app.dtos.CustomerDTO;
-import q.jv.digital_banking_app.dtos.SavingBankAccountDTO;
+import q.jv.digital_banking_app.dtos.*;
 import q.jv.digital_banking_app.exceptions.BalanceNotSufficientException;
 import q.jv.digital_banking_app.exceptions.BankAccountNotFoundException;
 import q.jv.digital_banking_app.exceptions.CustomerNotFoundException;
@@ -27,6 +24,10 @@ public interface BankAccountService {
     CustomerDTO updateCustomer(CustomerDTO customerDTO);
 
     void deleteCustomer(Long customerId);
+
+    List<AccountOperationDTO> accountHistory(String accountId);
+
+    AccountHistoryDTO getAccountHistory(String accountId, int page, int size) throws BankAccountNotFoundException;
 
     List<CustomerDTO> searchCustomers(String keyword);
 }

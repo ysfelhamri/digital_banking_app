@@ -2,9 +2,11 @@ package q.jv.digital_banking_app.mappers;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
+import q.jv.digital_banking_app.dtos.AccountOperationDTO;
 import q.jv.digital_banking_app.dtos.CurrentBankAccountDTO;
 import q.jv.digital_banking_app.dtos.CustomerDTO;
 import q.jv.digital_banking_app.dtos.SavingBankAccountDTO;
+import q.jv.digital_banking_app.entities.AccountOperation;
 import q.jv.digital_banking_app.entities.CurrentAccount;
 import q.jv.digital_banking_app.entities.Customer;
 import q.jv.digital_banking_app.entities.SavingAccount;
@@ -52,5 +54,10 @@ public class BankAccountMapperImpl {
         return currentAccount;
     }
 
+    public AccountOperationDTO fromAccountOperation(AccountOperation accountOperation){
+        AccountOperationDTO accountOperationDTO=new AccountOperationDTO();
+        BeanUtils.copyProperties(accountOperation,accountOperationDTO);
+        return accountOperationDTO;
+    }
 
 }
